@@ -39,7 +39,7 @@
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #555555; /* Used for navigation links of the dropdown items in the navigation menu. */
   /* --nav-dropdown-hover-color: #5cb874; Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
-  --nav-dropdown-hover-color:#000080; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #000080; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -184,7 +184,7 @@ h6 {
 
 /* PHP Email Form Messages
 ------------------------------*/
-.php-email-form .error-message {
+.php-email-form-2 .error-message {
   display: none;
   background: #df1529;
   color: #ffffff;
@@ -194,7 +194,7 @@ h6 {
   font-weight: 600;
 }
 
-.php-email-form .sent-message {
+.php-email-form-2 .sent-message {
   display: none;
   color: #ffffff;
   background: #059652;
@@ -204,7 +204,7 @@ h6 {
   font-weight: 600;
 }
 
-.php-email-form .loading {
+.php-email-form-2 .loading {
   display: none;
   background: var(--surface-color);
   text-align: center;
@@ -212,7 +212,7 @@ h6 {
   margin-bottom: 24px;
 }
 
-.php-email-form .loading:before {
+.php-email-form-2 .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -221,10 +221,10 @@ h6 {
   margin: 0 10px -6px 0;
   border: 3px solid var(--accent-color);
   border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
+  animation: php-email-form-2-loading 1s linear infinite;
 }
 
-@keyframes php-email-form-loading {
+@keyframes php-email-form-2-loading {
   0% {
     transform: rotate(0deg);
   }
@@ -1217,6 +1217,8 @@ section,
   transition: 0.5s;
   margin: 10px;
   animation: fadeInUp 1s both 0.4s;
+  position: relative;
+  z-index: 10;
 }
 
 .services .service-item .service-content {
@@ -1226,11 +1228,19 @@ section,
 .services .service-item h3 a {
   color: color-mix(in srgb, var(--heading-color), transparent 25%);
   font-weight: 700;
-  font-size: 22px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.services .service-item h3 p {
+  color: color-mix(in srgb, var(--heading-color), transparent 25%);
+  font-weight: 700;
+  font-size: 16px;
   transition: 0.3s;
 }
 
 .services .service-item p {
+  font-size: 14px;
   margin-bottom: 0;
   color: color-mix(in srgb, var(--default-color), transparent 40%);
   transition: 0.3s;
@@ -1424,7 +1434,7 @@ section,
 
 .team .member img {
   /* margin: -1px -1px 30px -1px; */
-  height: 228px;
+  /* height: 228px; */
   border-radius: 20px;
   object-fit: cover;
 }
@@ -1522,7 +1532,7 @@ section,
   color: var(--contrast-color);
 }
 
-.contact .php-email-form {
+.contact .php-email-form-2 {
   background-color: var(--surface-color);
   height: 100%;
   padding: 30px;
@@ -1530,14 +1540,14 @@ section,
 }
 
 @media (max-width: 575px) {
-  .contact .php-email-form {
+  .contact .php-email-form-2 {
     padding: 20px;
   }
 }
 
-.contact .php-email-form input[type="text"],
-.contact .php-email-form input[type="email"],
-.contact .php-email-form textarea {
+.contact .php-email-form-2 input[type="text"],
+.contact .php-email-form-2 input[type="email"],
+.contact .php-email-form-2 textarea {
   font-size: 14px;
   padding: 10px 15px;
   box-shadow: none;
@@ -1547,19 +1557,19 @@ section,
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
-.contact .php-email-form input[type="text"]:focus,
-.contact .php-email-form input[type="email"]:focus,
-.contact .php-email-form textarea:focus {
+.contact .php-email-form-2 input[type="text"]:focus,
+.contact .php-email-form-2 input[type="email"]:focus,
+.contact .php-email-form-2 textarea:focus {
   border-color: var(--accent-color);
 }
 
-.contact .php-email-form input[type="text"]::placeholder,
-.contact .php-email-form input[type="email"]::placeholder,
-.contact .php-email-form textarea::placeholder {
+.contact .php-email-form-2 input[type="text"]::placeholder,
+.contact .php-email-form-2 input[type="email"]::placeholder,
+.contact .php-email-form-2 textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.contact .php-email-form button[type="submit"] {
+.contact .php-email-form-2 button[type="submit"] {
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
@@ -1568,7 +1578,7 @@ section,
   border-radius: 50px;
 }
 
-.contact .php-email-form button[type="submit"]:hover {
+.contact .php-email-form-2 button[type="submit"]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 
